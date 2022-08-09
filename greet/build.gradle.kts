@@ -2,9 +2,18 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
 }
 
 version = "1.0"
+
+multiplatformSwiftPackage {
+//    packageName("greet")
+    swiftToolsVersion("5.3")
+    targetPlatforms {
+        iOS { v("13") }
+    }
+}
 
 kotlin {
     android()
